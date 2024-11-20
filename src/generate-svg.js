@@ -5,6 +5,7 @@ import {SVGIcons2SVGFontStream} from 'svgicons2svgfont';
 import svg2ttf from 'svg2ttf';
 import ttf2woff from 'ttf2woff';
 import ttf2woff2 from 'ttf2woff2';
+import {deleteIconFolder} from './unzip.js';
 
 
 const iconsDirectory = './icons';
@@ -107,6 +108,7 @@ export const generateFonts = async(fontName, outputFolder) => {
                 // File does not exist
             }
         }
+        await deleteIconFolder();
 
         return glyphMetadata;
     } catch (err) {

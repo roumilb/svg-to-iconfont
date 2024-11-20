@@ -17,7 +17,7 @@ To use your new font, you can use the class `[fontName]-[icon-name]` to display 
 ```javascript
 import {generateIconFont} from '@roumi/svg-to-icon-font';
 
-await generateIconFont('icon', 'icons.zip');
+await generateIconFont('icon', '/path/to/icons.zip', '/path/to/output');
 
 // CSS, Woff, Woff2 files are in the output folder
 // You also have a icon-list.html file to see all the icons
