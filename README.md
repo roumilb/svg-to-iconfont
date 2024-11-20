@@ -1,4 +1,4 @@
-# Icon generator
+# SVG to icon font
 
 ## Install
 
