@@ -12,6 +12,9 @@ export const optimizeSvgs = async() => {
         console.log('Optimizing SVGs...');
         const files = await fs.readdir(unzipIconsFolder);
         for (const file of files) {
+            if(path.extname(file).toLowerCase() !== '.svg') {
+                continue;
+            }
             const filePath = path.join(unzipIconsFolder, file);
             const data = await fs.readFile(filePath, 'utf8');
             if (!data.includes('fill-rule="evenodd"')) {
