@@ -1,0 +1,23 @@
+{
+    "dependencies": {
+        "fix-path-directions": "^1.0.3",
+        "fs": "^0.0.1-security",
+        "oslllo-svg-fixer": "^5.0.0",
+        "path": "^0.12.7",
+        "svg2ttf": "^6.0.3",
+        "svgicons2svgfont": "^15.0.0",
+        "ttf2woff": "^3.0.0",
+        "ttf2woff2": "^6.0.1",
+        "unzipper": "^0.12.3"
+    },
+    "name": "svg-to-iconfont",
+    "version": "0.0.1",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "type": "module"
+}
