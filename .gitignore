@@ -2,3 +2,6 @@ icons
 output
 node_modules
 *.zip
+
+test/icons
+test/output

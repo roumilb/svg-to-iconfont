@@ -2,17 +2,17 @@ import fixPathDirections from 'fix-path-directions';
 import fs from 'fs/promises';
 import path from 'path';
 import SVGFixer from 'oslllo-svg-fixer';
+import {unzipIconsFolder} from './variables.js';
 
 const {getFixedPathDataString} = fixPathDirections;
 
-const svgFolder = 'icons';
 const pathRegex = /<path[^>]*d="([^"]*)"/;
 export const optimizeSvgs = async() => {
     try {
         console.log('Optimizing SVGs...');
-        const files = await fs.readdir(svgFolder);
+        const files = await fs.readdir(unzipIconsFolder);
         for (const file of files) {
-            const filePath = path.join(svgFolder, file);
+            const filePath = path.join(unzipIconsFolder, file);
             const data = await fs.readFile(filePath, 'utf8');
             if (!data.includes('fill-rule="evenodd"')) {
                 continue;
@@ -43,5 +43,5 @@ export const fixSvg = async() => {
         throwIfDestinationDoesNotExist: false
     };
 
-    await SVGFixer('icons', 'icons', options).fix(); // Returns instance
+    await SVGFixer(unzipIconsFolder, unzipIconsFolder, options).fix(); // Returns instance
 };

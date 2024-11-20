@@ -2,10 +2,9 @@ import fs from 'fs/promises';
 
 // Configuration
 
-export const generateCSS = async(metadata, fontName) => {
+export const generateCSS = async(metadata, fontName, outputFolder) => {
     const classPrefix = `${fontName}-`;
-    const outputCSSFile = `./output/${fontName}.css`;
-    console.log(outputCSSFile);
+    const outputCSSFile = `${outputFolder}/${fontName}.css`;
     const outputFontFileWoffUrl = `${fontName}.woff`;
     const outputFontFileWoff2Url = `${fontName}.woff2`;
 

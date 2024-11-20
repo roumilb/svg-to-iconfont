@@ -10,11 +10,11 @@ import ttf2woff2 from 'ttf2woff2';
 const iconsDirectory = './icons';
 
 
-export const generateFonts = async(fontName) => {
-    const outputFontFile = `./output/${fontName}.svg`;
-    const outputTTFFile = `./output/${fontName}.ttf`;
-    const outputWOFFFile = `./output/${fontName}.woff`;
-    const outputWOFF2File = `./output/${fontName}.woff2`;
+export const generateFonts = async(fontName, outputFolder) => {
+    const outputFontFile = `${outputFolder}/${fontName}.svg`;
+    const outputTTFFile = `${outputFolder}/${fontName}.ttf`;
+    const outputWOFFFile = `${outputFolder}/${fontName}.woff`;
+    const outputWOFF2File = `${outputFolder}/${fontName}.woff2`;
     const filesToDelete = [
         outputFontFile,
         outputTTFFile

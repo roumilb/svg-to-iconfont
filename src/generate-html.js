@@ -1,10 +1,10 @@
 import fs from 'fs/promises';
 
-export const generateHtml = async(metadata, fontName) => {
+export const generateHtml = async(metadata, fontName, outputFolder) => {
     const html = `<html>
 <head>
     <title>SVG Icons</title>
-    <link rel="stylesheet" href="./output/${fontName}.css">
+    <link rel="stylesheet" href="./${fontName}.css">
     <style>
     .container {
         display: flex;
@@ -37,8 +37,8 @@ export const generateHtml = async(metadata, fontName) => {
 </html>`;
 
     try {
-        await fs.writeFile('./index.html', html);
-    } catch (ero) {
+        await fs.writeFile(`${outputFolder}/icon-list.html`, html);
+    } catch (err) {
         console.error('Error while generating HTML file:', err);
     }
 };

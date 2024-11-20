@@ -1,14 +1,30 @@
 # Icon generator
 
+## Install
+
+```bash
+npm install @roumi/svg-to-icon-font
+```
+
 ## Generate a new font
 
-1. Put all these icons in SVG format in a zip file, for example on figma select all the icons and export in SVG the fact
-2. Put the zip file named "icons.zip" at the root of this project
-3. Run the command `node index.js [font-name]` to generate the new font
-4. View the new font in the `index.html` file
+Use the function `generateIconFont(fontName, zipFilePath)` to generate a new font from a zip file containing all the icons in SVG format.
 
-For `[font-name]` you have to put the name of the font that we will find in the classes to put, here are examples with an icon `trash`:
+This will generate CSS, Woff, Woff2 files.
 
-- `node index.js icon` => `<i class="icon-trash"></i>`
-- `node index.js my-projet` => `<i class="my-projet-trash"></i>`
-- `node index.js "this is a test"` => `<i class="thisisatest-trash"></i>`
+To use your new font, you can use the class `[fontName]-[icon-name]` to display an icon.
+
+```javascript
+import {generateIconFont} from '@roumi/svg-to-icon-font';
+
+await generateIconFont('icon', 'icons.zip');
+
+// CSS, Woff, Woff2 files are in the output folder
+// You also have a icon-list.html file to see all the icons
+```
+
+## Font name examples
+
+- `icon` => `<i class="icon-trash"></i>`
+- `my-projet` => `<i class="my-projet-trash"></i>`
+- `"this is a test"` => `<i class="thisisatest-trash"></i>`
