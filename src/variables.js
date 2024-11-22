@@ -1,1 +1,1 @@
-export const unzipIconsFolder = 'icons';
+export const unzipIconsFolder = `${process.cwd()}/icons`;
