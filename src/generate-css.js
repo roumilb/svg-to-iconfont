@@ -13,7 +13,7 @@ export const generateCSS = async(metadata, fontName, outputFolder) => {
 /* Icons font: ${fontName} */
 @font-face {
     font-family: '${fontName}';
-    src: url('${outputFontFileWoffUrl}') format('woff'), url('${outputFontFileWoff2Url}') format('woff2');
+    src: url('${outputFontFileWoff2Url}') format('woff2'), url('${outputFontFileWoffUrl}') format('woff');
 }
 [class^="${classPrefix}"], [class*=" ${classPrefix}"] {
     font-family: '${fontName}';
