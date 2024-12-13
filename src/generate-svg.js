@@ -46,11 +46,19 @@ export const generateFonts = async(fontName, outputFolder) => {
 
         const files = await fs.readdir(iconsDirectory);
 
+        const createUniqueUnicode = () => {
+            const unicode = String.fromCharCode(0xe000 + Math.random() * 1000);
+            if (glyphMetadata.some((glyph) => glyph.unicode === unicode)) {
+                return createUniqueUnicode();
+            }
+            return unicode;
+        };
+
         for (const file of files) {
             if (path.extname(file) === '.svg') {
                 const filePath = path.join(iconsDirectory, file);
                 const glyphName = path.basename(file, '.svg');
-                const unicode = String.fromCharCode(0xe000 + Math.random() * 1000);
+                const unicode = createUniqueUnicode();
 
                 const glyphStream = createReadStream(filePath);
                 glyphStream.metadata = {

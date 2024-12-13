@@ -30,7 +30,7 @@ export const generateCSS = async(metadata, fontName, outputFolder) => {
                               name,
                               unicode
                           }) => {
-            const escapedUnicode = unicode.codePointAt(0).toString(16); // Convertit en code hexadécimal
+            const escapedUnicode = unicode.codePointAt(0).toString(16);
             cssContent += `
 .${classPrefix}${name}::before {
     content: "\\${escapedUnicode}";
