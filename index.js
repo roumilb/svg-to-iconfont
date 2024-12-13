@@ -11,4 +11,6 @@ export const generateIconFont = async(fontName, zipFilePath, outputFolder = './o
     const glyphMetadata = await generateFonts(fontName, outputFolder);
     await generateCSS(glyphMetadata, fontName, outputFolder);
     await generateHtml(glyphMetadata, fontName, outputFolder);
+
+    return glyphMetadata;
 };
